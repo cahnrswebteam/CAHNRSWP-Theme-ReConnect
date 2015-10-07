@@ -1,0 +1,432 @@
+.main-header {
+	height: 198px;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: 1;
+}
+.main-header hgroup {
+	background: none;
+	box-sizing: border-box;
+	font-size: 0;
+	height: 100%;
+	margin: 0 auto;
+	max-width: 990px;
+	padding-left: 198px;
+}
+.main-header hgroup:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+/* Home navigation */
+.reconnect-header-nav {
+	display: none;
+}
+.home .reconnect-header-nav {
+	display: block;
+	line-height: 0;
+	position: absolute;
+	top: 0;
+}
+.reconnect-header-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.reconnect-header-nav ul:before,
+.reconnect-header-nav ul:after {
+	content: ' ';
+	display: table;
+}
+.reconnect-header-nav ul:after {
+	clear: both;
+}
+.reconnect-header-nav li {
+	float: left;
+	font-size: 13px;
+	line-height: 13px;
+	padding: 1px 0 1px 1px;
+	/*width: 20%;*/
+}
+.reconnect-header-nav a {
+	background: rgba(255,255,255,0.5);
+	color: #5e6a71;
+	display: block;
+	padding: 0.5rem 2rem;
+	transition: background-color .2s linear, color .2s linear;
+}
+.reconnect-header-nav a:hover {
+	background: rgba(94,106,113,0.75);
+	color: #fff;
+}
+/* Headings */
+.main-header .sup-header {
+	display: inline-block;
+	font-size: 1rem;
+	padding: 0 2rem;
+	vertical-align: middle;
+}
+.sup-header-default img {
+	height: auto;
+	max-width: 100%;
+	width: 100%;
+}
+.main-header sub {
+	bottom: 0;
+	box-sizing: border-box;
+	font-size: 15px;
+	max-width: 792px;
+	padding: 0.5rem 2rem;
+	position: absolute;
+	text-transform: uppercase;
+	width: 100%;
+}
+/* Silly */
+.sub-header-default {
+	display: block;
+	height: 15px;
+	text-align: justify;
+}
+.sub-header-default:after {
+	content: "";
+  display: inline-block;
+  width: 100%;
+}
+/* End silly */
+
+/* Cover story */
+.row.single.cover-stories .column {
+	max-width: 100%;
+	width: 100%;
+}
+.cover-stories article:first-of-type {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 800px;
+}
+.cover-stories article:first-of-type > a {
+	display: inline-block;
+	height: 602px;
+	margin-top: 198px;
+	width: 100%;
+}
+.cover-stories article:first-of-type header {
+	box-sizing: border-box;
+	margin: 0 auto;
+	max-width: 990px;
+	padding: 2rem;
+	width: 100%;
+}
+.archive.date .cover-stories article:first-of-type header {
+	margin: 0;
+	max-width: 792px;
+}
+
+.cover-stories article:not(:first-of-type) {
+	box-sizing: border-box;
+	margin-top: 1rem;
+	max-width: 792px;
+	position: relative;
+}
+.home .cover-stories article:not(:first-of-type) {
+	margin: 2rem auto 0 auto;
+	max-width: 926px;
+	width: 100%;
+}
+.cover-stories article:not(:first-of-type) figure {
+	background-position: center;
+	background-size: cover;
+	float: left;
+	height: 100%;
+	position: absolute;
+	width: 31%;
+}
+.cover-stories article:not(:first-of-type) .featured-image {
+	height: 100%;
+}
+.cover-stories article:not(:first-of-type) .article-summary {
+	margin-left: 31%;
+	padding: 0.5rem 2rem;
+}
+
+/* Other sections */
+.home .row.single.features .column,
+.home .row.single.alumni-news .column,
+.home .row.single.small-bites .column {
+	width: 990px;
+}
+
+/* All articles */
+.column article {
+	transition: opacity .2s ease-in-out;
+}
+.column:hover article:not(:hover) {
+	opacity: 0.4;
+}
+h3 {
+	font-size: 1.2rem;
+	padding-top: 0;
+}
+.flag {
+	background: rgba(94,106,113,0.8);
+}
+.article-summary p:last-of-type {
+	padding-bottom: 0;
+}
+
+/* Features */
+.features article {
+	display: table;
+	padding: 2rem 0;
+	position: relative;
+}
+/* Probably use a background image instead, if keeping */
+.features article:before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	left: calc(50% - 1px);
+	border-left: 1px solid #5e6a71;
+}
+.features article:after {
+	background-color: #f9f9f9;
+	border-radius: 17px;
+	border: 1px solid #5e6a71;
+	content: '';
+	height: 17px;
+	left: 0;
+	margin: 0 auto;
+	position: absolute;
+	right: 0;
+	width: 17px;
+	visibility: visible;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform:     translateY(-50%);
+	transform:         translateY(-50%);
+}
+.features article:nth-of-type(even) {
+	direction: rtl;
+}
+.features figure,
+.features .article-summary {
+	box-sizing: border-box;
+	direction: ltr;
+	display: table-cell;
+	vertical-align: middle;
+	width: 50%;
+}
+.features figure,
+.features article:nth-of-type(even) .article-summary {
+	padding: 0 2rem 0 0;
+}
+.features article:nth-of-type(even) figure,
+.features .article-summary {
+	padding: 0 0 0 2rem;
+}
+.features article:last-of-type {
+	margin-bottom: 0;
+}
+.features article:last-of-type:before {
+	height: 50%;
+}
+.features article:nth-of-type(even) .more-button {
+	text-align: right;
+}
+
+.featured-image {
+	height: auto;
+}
+.featured-image img {
+	display: block;
+	visibility: hidden;
+}
+
+/* More buttons */
+.more-button {
+	font-weight: bold;
+	padding-bottom: 0;
+}
+.more-button a {
+	border: 1px solid #981e32;
+	color: #981e32;
+	display: inline-block;
+	padding: .5rem 1rem;
+	text-transform: uppercase;
+	transition: background-color .2s linear, color .2s linear;
+}
+.more-button a:hover {
+	background-color: #981e32;
+	color: #fff;
+}
+
+/* Alumni News - Profile */
+.category-profile {
+	margin-bottom: 3rem;
+	position: relative;
+}
+.category-profile figure {
+	background-position: center;
+	background-size: cover;
+	float: left;
+	height: 100%;
+	position: absolute;
+	width: 31%;
+}
+.category-profile figure .featured-image {
+	height: 100%;
+}
+.category-profile .article-summary {
+	margin-left: 31%;
+	padding: 0.5rem 2rem;
+}
+.category-profile .flag {
+	color: #fff;
+	padding: 0.25rem 0.75rem;
+	position: absolute;
+	right: 69%;
+	bottom: 0.5rem;
+}
+/* Alumni News - Future Cougs */
+
+/* Alumni News - Classmate Notes */
+
+/* Small Bites */
+.small-bites .column {
+	-webkit-column-count: 3;
+	-moz-column-count:    3;
+	column-count:         3;
+	-webkit-column-gap: 2rem;
+	-moz-column-gap:    2rem;
+	column-gap:         2rem;
+}
+.small-bites .column article {
+	background: #fff;
+	column-break-inside: avoid;
+	display: inline-block;
+	margin-bottom: 2rem;
+	position: relative;
+}
+.small-bites .flag {
+	color: #fff;
+	padding: 0.25rem 0.75rem;
+	position: absolute;
+	right: 0;
+	top: 0.5rem;
+}
+.small-bites .article-summary {
+	padding: 1rem;
+}
+
+/* Spine mod */
+.home #spine:not(.skimmed) #glue:before {
+	opacity: 0.75;
+}
+
+/* Footer */
+.main-footer {
+	color: #8d959a;
+	padding: 4rem 0 2rem;
+	text-align: center;
+}
+.main-footer .stylized-name .re {
+	font-size: 19px;
+	text-transform: lowercase;
+}
+.main-footer .stylized-name .connect {
+	color: #5e6a71;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+/*@media screen and (min-width:990px) {
+	.archive.date .cover-stories {
+		margin-left: 0 !important;
+	}
+}*/
+@media screen and (max-width:989px) {
+	.main-header {
+		height: auto;
+	}
+	.main-header hgroup {
+		max-width: 792px;
+		padding-left: 0;
+	}
+	.home .reconnect-header-nav {
+		display: none;
+	}
+	.main-header .sup-header {
+		padding: 2rem 2rem 3rem;
+	}
+	
+	.spine-main-index .section-header,
+	.archive.date .section-header {
+		overflow: visible;
+	}
+	.home .row.single.features .column,
+	.home .row.single.alumni-news .column,
+	.home .row.single.small-bites .column {
+		width: 100%;
+	}
+}
+@media screen and (max-width:791px) {
+	.cover-stories article:first-of-type {
+		height: 600px;
+	}
+	.features .featured-image {
+		padding-bottom: 50%;
+	}
+}
+@media only screen and (max-width:693px) {
+	/* Bg image */
+	.features .column:before {
+		content: normal;
+		border-left: none;
+	}
+	.features article {
+		display: block;
+	}
+	/* May as well use a background image instead */
+	.features article:after {
+		background-color: transparent;
+		border: none;
+		content: normal;
+		height: 0;
+		width: 0;
+	}
+	.features article:nth-of-type(even) {
+		direction: ltr;
+	}
+	.features figure,
+	.features article:nth-of-type(even) figure,
+	.features .article-summary,
+	.features article:nth-of-type(even) .article-summary {
+		display: block;
+		float: none;
+		padding: 0;
+		width: 100%;
+	}
+	.features .featured-image {
+		margin-bottom: 1rem;
+		padding-bottom: 0;
+	}
+	.features article:before,
+	.features article:last-of-type:before,
+	.features article:after {
+		content: normal;
+	}
+	.features article .more-button,
+	.features article:nth-of-type(even) .more-button {
+		text-align: center;
+	}
+	.small-bites .column {
+		-webkit-column-count: 2;
+		-moz-column-count:    2;
+		column-count:         2;
+	}
+}
