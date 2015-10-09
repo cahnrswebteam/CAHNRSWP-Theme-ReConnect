@@ -5,7 +5,7 @@
 	<?php get_template_part( 'parts/headers' ); ?>
 
 	<?php
-		$year = date( 'Y' );
+		$year = is_year() ? get_the_time( 'Y' ) : date( 'Y' );
 		$common_args = array(
 			'year' => $year,
 			'posts_per_page' => -1,

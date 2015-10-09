@@ -137,8 +137,6 @@
 	width: 100%;
 }
 .cover-stories article:not(:first-of-type) figure {
-	background-position: center;
-	background-size: cover;
 	float: left;
 	height: 100%;
 	position: absolute;

@@ -30,10 +30,6 @@
 	font-weight: normal;
 	padding: 1rem 0 1rem 1rem;
 	text-transform: uppercase;
-	transition: color .2s linear;
-}
-.cover-stories article:first-of-type h1 .crimson-er-text {
-	transition: color .2s linear;
 }
 .cover-stories article:first-of-type h1 .letter-spacing {
 	letter-spacing: 3.5px;
