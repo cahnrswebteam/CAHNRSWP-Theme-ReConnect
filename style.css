@@ -6,6 +6,7 @@ Author: CAHNRS Communications, Phil Cable
 Author URI: http://cahnrs.wsu.edu/communications/
 Template: spine
 */
+/* CAHNRS header */
 .main-header {
 	background: none;
 }
@@ -108,6 +109,7 @@ Template: spine
 .main-header sup {
 	font-weight: bold;
 }
+/* Additional header elements */
 .main-header sup .year {
 	color: #5e6a71;
 	display: inline;
@@ -155,9 +157,6 @@ Template: spine
 	position: relative;
 	text-transform: uppercase;
 }
-.spine-main-index .section-header h2 {
-	background: #d7dadb;
-}
 .section-header h2:before {
 	background: inherit;
 	content: '';
@@ -174,8 +173,70 @@ Template: spine
 .small-bites h2 img {
 	vertical-align: bottom;
 }
+/* Sections and headings (Issues page) */
+.spine-main-index:hover section:not(:hover) {
+	opacity: 0.4;
+}
+.spine-main-index section {
+	padding-top: 2rem;
+	transition: opacity .2s ease-in-out;
+}
+.spine-main-index .section-header h2 {
+	background: rgba(215,218,219,0.8);
+	line-height: 2rem;
+	position: relative;
+	z-index: 1;
+}
+.spine-main-index .column {
+	background-position: center;
+	background-size: cover;
+	height: 500px;
+	margin-top: -3rem;
+	text-align: right;
+}
+.spine-main-index .column a {
+	height: 100%;
+	right: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+.spine-main-index .column h3 {
+	background: rgba(255,255,255,0.75);
+	display: inline-block;
+	font-weight: normal;
+	margin: 3rem -2rem 4rem 0;
+	padding: 0.5rem 2rem 0.5rem 1rem;
+	text-transform: uppercase;
+}
+.archive-title h3 {
+	float: right;
+	position: relative;
+}
+.archive-title h3:after {
+	color: #fff;
+	content: '+';
+	right: 2rem;
+	position: absolute;
+	top: 4rem;
+}
+.archive-title h4 {
+	background: rgba(255,255,255,0.75);
+	clear: both;
+	display: inline-block;
+	float: right;
+	font-size: 1rem;
+	font-weight: normal;
+	margin: 0.5rem -2rem 0.5rem 0;
+	padding: 0.5rem 2rem 0.5rem 1rem;
+}
 
 /* Article stuff */
+.article-date,
+.article-footer {
+	display: none;
+}
 .single-post .dropcap {
 	float: left;
 	font-family: Palatino, Palatino Linotype, Book Antiqua, serif;
@@ -193,6 +254,10 @@ Template: spine
 }
 figure {
 	max-width: 100%;
+}
+figure.alignright,
+img.alignright {
+	margin-right: -2rem;
 }
 .article-body blockquote {
 	color: #00a5bd;
@@ -278,6 +343,7 @@ figcaption {
 	color: #8d959a;
 	font-size: 0.9em;
 	line-height: 1.5em;
+	text-align: center;
 }
 
 iframe {
@@ -293,6 +359,11 @@ iframe {
 @media screen and (max-width:791px) {
 	.single-post .dropcap:before {
 		height: 0.82em;
+	}
+	figure.alignright,
+	img.alignright,
+	.article-body blockquote.pullquote {
+		margin-right: -1rem;
 	}
 @media only screen and (max-width:693px) {
 	.gallery-columns-1 .gallery-item,
@@ -322,6 +393,13 @@ iframe {
 		display: block;
 		width: 33%;
 		margin: 1rem auto;
+	}
+	figure.alignright,
+	img.alignright,
+	figure.alignleft,
+	img.alignleft {
+		float: none;
+		margin: 0 auto;
 	}
 }
 @media only screen and (max-width:530px) {

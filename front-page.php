@@ -43,7 +43,7 @@
 		$feature_stories = new WP_Query( $common_args );
 		if ( $feature_stories->have_posts() ) :
 			?>
-			<section class="row single features gutter pad-bottom">
+			<section class="row single features gutter pad-ends">
       	<header class="section-header">
 					<h2>Features</h2>
 				</header>
