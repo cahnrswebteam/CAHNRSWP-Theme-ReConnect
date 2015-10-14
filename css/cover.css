@@ -48,7 +48,6 @@
 	font-size: 13px;
 	line-height: 13px;
 	padding: 1px 0 1px 1px;
-	/*width: 20%;*/
 }
 .reconnect-header-nav a {
 	background: rgba(255,255,255,0.5);
@@ -61,6 +60,7 @@
 	background: rgba(94,106,113,0.75);
 	color: #fff;
 }
+
 /* Headings */
 .main-header .sup-header {
 	display: inline-block;
@@ -83,18 +83,10 @@
 	text-transform: uppercase;
 	width: 100%;
 }
-/* Silly */
 .sub-header-default {
+	text-align: center;
 	display: block;
-	height: 15px;
-	text-align: justify;
 }
-.sub-header-default:after {
-	content: "";
-  display: inline-block;
-  width: 100%;
-}
-/* End silly */
 
 /* Cover story */
 .row.single.cover-stories .column {
@@ -344,7 +336,6 @@ h3 {
 	.main-header .sup-header {
 		padding: 2rem 2rem 3rem;
 	}
-	
 	.spine-main-index .section-header,
 	.archive.date .section-header {
 		overflow: visible;
@@ -356,6 +347,12 @@ h3 {
 	}
 }
 @media screen and (max-width:791px) {
+	.main-header .sup-header {
+		padding: 2rem;
+	}
+	.main-header sub {
+		position: relative;
+	}
 	.cover-stories article:first-of-type {
 		height: 600px;
 	}
