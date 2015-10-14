@@ -1,15 +1,29 @@
 .sub-header {
 	color: #5e6a71;
 }
-.cover-stories article:first-of-type header {
+.cover-feature header {
 	text-align: right;
 }
-.cover-stories article:first-of-type h1 {
+.cover-feature h1 {
+	background: rgba(255, 255, 255, 0.8);
 	color: #5e6a71;
 	display: inline-block;
-	font-size: 1.6rem;
 	font-weight: normal;
 	margin-top: 0.5rem;
+	padding: 1rem 0 1rem 2rem;
+	position: relative;
+}
+.cover-feature h1:after {
+	background: inherit;
+	content: '';
+	height: 100%;
+	position: absolute;
+	right: -9999rem;
+	top: 0;
+	width: 9999rem;
+}
+.cover-feature .article-summary {
+	display: none;
 }
 .cover-stories article:nth-of-type(2) .featured-image {
 	background-position: left center;

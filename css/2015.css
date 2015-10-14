@@ -1,3 +1,4 @@
+/* Sub-header */
 .sub-header {
 	background: rgba(173,164,0,0.75);
 }
@@ -19,32 +20,51 @@
 .sub-header:after {
 	right: -9999rem;
 }
+
 /* Cover story */
-.cover-stories article:first-of-type header {
-	text-align: right;
-}
-.cover-stories article:first-of-type h1 {
+.cover-feature h1 {
 	border-left: 3px solid #fff;
-	color: #8f7e35;
 	display: inline-block;
 	font-weight: normal;
 	padding: 1rem 0 1rem 1rem;
 	text-transform: uppercase;
+	transition: border-left-color .2s linear;
 }
-.cover-stories article:first-of-type h1 .letter-spacing {
+.cover-feature h1 a {
+	color: #8f7e35;
+	transition: color .2s linear;
+}
+.cover-feature h1 a .crimson-er-text {
+	transition: color .2s linear;
+}
+.cover-feature h1 .letter-spacing {
 	letter-spacing: 3.5px;
 	line-height: 1.2;
 }
-.cover-stories article:first-of-type h1 .emphasized {
+.cover-feature h1 .emphasized {
 	font-size: 3.1rem;
 	font-weight: bold;
 	line-height: 1;
 }
+.cover-feature h1:hover {
+	border-left-color: #8f7e35; border-left-color: #c60c30;
+}
+.cover-feature h1 a:hover {
+	color: #fff;
+}
+.cover-feature h1 a:hover .crimson-er-text {
+	color: #981e32; color: #8f7e35;
+}
+.cover-feature .teaser .article-summary p {
+	color: #fff;
+}
 
+/* Section headings */
 .section-header h2 {
 	background-color: #ada400;
 }
 
+/* Flags */
 .flag {
 	background: rgba(173,164,0,0.8);
 }

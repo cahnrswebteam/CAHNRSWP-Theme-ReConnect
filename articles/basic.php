@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php if ( in_category( 'cover-story' ) ) { post_class( 'cover-suite' ); } else { post_class(); } ?>>
 	<?php
   	if ( spine_has_featured_image() ) {
 		$featured_image_src = spine_get_featured_image_src( 'spine-medium_size' );
