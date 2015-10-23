@@ -13,17 +13,14 @@
 	?>
 
 	<?php
-		//$common_args['category_name'] = 'cover-story';
-  	//$cover_stories = new WP_Query( $common_args );
 		$cover_stories = new WP_Query( array_merge( $common_args, array( 'category_name' => 'cover-story' ) ) );
-		//$cover_stories->found_posts;
 		if ( $cover_stories->have_posts() ) :
 			?>
-			<section id="cover-stories" class="row single pad-bottom cover-stories unbound recto<?php if ( is_front_page() ) { echo ' verso'; } ?>">
+			<section id="cover-stories" class="row single pad-bottom cover-stories">
 				<div class="column">
 				<?php while ( $cover_stories->have_posts() ) : $cover_stories->the_post(); ?>
-        <?php
-					if ( $cover_stories->current_post == 0 /*&& !is_paged()*/ ) {
+				<?php
+					if ( $cover_stories->current_post == 0 ) {
 						get_template_part( 'articles/cover-story' );
 					} else {
 						get_template_part( 'articles/basic' );
@@ -35,16 +32,14 @@
 			<?php
 		endif;
 		wp_reset_postdata();
-		//unset( $common_args['category_name'] );
 	?>
 
 	<?php
-		$common_args['category_name'] = 'feature';
-		$feature_stories = new WP_Query( $common_args );
+		$feature_stories = new WP_Query( array_merge( $common_args, array( 'category_name' => 'feature' ) ) );
 		if ( $feature_stories->have_posts() ) :
 			?>
 			<section class="row single features gutter pad-ends">
-      	<header class="section-header">
+				<header class="section-header">
 					<h2>Features</h2>
 				</header>
 				<div class="column">
@@ -56,16 +51,14 @@
 			<?php
 		endif;
 		wp_reset_postdata();
-		unset( $common_args['category_name'] );
 	?>
 
 	<?php
-		$common_args['category_name'] = 'alumni-news';
-		$alumni_news = new WP_Query( $common_args );
+		$alumni_news = new WP_Query( array_merge( $common_args, array( 'category_name' => 'alumni-news' ) ) );
 		if ( $alumni_news->have_posts() ) :
 			?>
 			<section class="row single alumni-news gutter pad-ends">
-      	<header class="section-header">
+				<header class="section-header">
 					<h2>Alumni News</h2>
 				</header>
 				<div class="column">
@@ -83,16 +76,14 @@
 			<?php
 		endif;
 		wp_reset_postdata();
-		unset( $common_args['category_name'] );
 	?>
 
 	<?php
-		$common_args['category_name'] = 'small-bites';
-		$small_bites = new WP_Query( $common_args );
+		$small_bites = new WP_Query( array_merge( $common_args, array( 'category_name' => 'small-bites' ) ) );
 		if ( $small_bites->have_posts() ) :
 			?>
 			<section class="row single small-bites gutter pad-ends">
-      	<header class="section-header">
+				<header class="section-header">
 					<h2><span class="small">Small</span> Bites <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/small-bites.png" width="130" height="31" alt="Small Bites" /></h2>
 				</header>
 				<div class="column">
@@ -104,7 +95,6 @@
 			<?php
 		endif;
 		wp_reset_postdata();
-		unset( $common_args['category_name'] );
 	?>
 
 	<?php get_template_part( 'parts/footers' ); ?>

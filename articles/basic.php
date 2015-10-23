@@ -1,4 +1,13 @@
-<article id="post-<?php the_ID(); ?>" <?php if ( in_category( 'cover-story' ) ) { post_class( 'cover-suite' ); } else { post_class(); } ?>>
+<?php
+$additional_classes = array();
+if ( in_category( 'cover-story' ) ) {
+	$additional_classes[] = 'cover-suite';
+	if ( is_archive() ) {
+		$additional_classes[] = 'guttered';
+	}
+}
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class( $additional_classes ); ?>>
 	<?php
   	if ( spine_has_featured_image() ) {
 		$featured_image_src = spine_get_featured_image_src( 'spine-medium_size' );
@@ -9,7 +18,7 @@
 		</figure><?php
 		}
 	?>
-	<?php if ( has_tag( 'online-exclusive' ) ) : ?><a href="<?php the_permalink(); ?>"  class="flag">Online Exclusive</a><?php endif; ?>
+	<?php if ( has_tag( 'online-exclusive' ) ) : ?><a href="<?php the_permalink(); ?>" class="flag">Online Exclusive</a><?php endif; ?>
   <?php if ( in_category( 'profile' ) ) : ?><a href="<?php the_permalink(); ?>" class="flag">Alumni Profile</a><?php endif; ?>
   <div class="article-summary">
 		<header class="article-header">

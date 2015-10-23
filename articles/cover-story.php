@@ -1,4 +1,14 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'cover-feature' ); ?> style="background-image: url('<?php echo esc_url( spine_get_featured_image_src() ); ?>');" data-id="<?php the_ID(); ?>" data-headline="<?php the_title(); ?>" data-anchor="<?php the_permalink(); ?>">
+<?php
+$additional_classes = array(
+	'cover-feature',
+	'unbound',
+	'recto',
+);
+if ( is_front_page() ) {
+	$additional_classes[] = 'verso';
+}
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class( $additional_classes ); ?> style="background-image: url('<?php echo esc_url( spine_get_featured_image_src() ); ?>');" data-id="<?php the_ID(); ?>" data-headline="<?php the_title(); ?>" data-anchor="<?php the_permalink(); ?>">
 	<div class="teaser">
 		<header class="article-header">
 			<?php $title = ( get_post_meta( $post->ID, 'cover_title', true ) ) ? wp_kses_post( get_post_meta( $post->ID, 'cover_title', true ) ) : get_the_title(); ?>

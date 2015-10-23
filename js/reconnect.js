@@ -8,7 +8,7 @@
 		}
 			$('.cover-stories').removeClass('verso').removeAttr('style');
 	}
-    
+
 	$window.resize(resize).trigger('resize');
 
 })(jQuery);

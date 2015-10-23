@@ -8,7 +8,7 @@
 
 		<nav class="reconnect-header-nav">
 			<?php
-      	$spine_site_args = array(
+				$spine_site_args = array(
 					'theme_location'  => 'site',
 					'menu'            => 'site',
 					'container'       => false,
@@ -35,7 +35,7 @@
 		</sup>
 
 		<sub class="sub-header">
-  		<span class="sub-header-default">WSU College of Agricultural, Human, and Natural Resource Sciences Alumni &amp; Friends</span>
+			<span class="sub-header-default">WSU College of Agricultural, Human, and Natural Resource Sciences Alumni &amp; Friends</span>
 		</sub>
 
 		<?php else: ?>
@@ -63,15 +63,12 @@
 		</div>
 
 		<?php
-    	if ( is_single() ) {
-			$category = wp_get_post_categories( $post->ID, array( 'fields' => 'names' ) );
-			?><span class="category"><?php echo $category[0]; ?><?php if ( 'Small Bites' === $category[0] ) { ?> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/small-bites.png" width="130" height="31" alt="Small Bites" /><?php } ?></span><?php
+			if ( is_single() ) {
+				$category = wp_get_post_categories( $post->ID, array( 'fields' => 'names' ) );
+				?><span class="category"><?php echo $category[0]; ?><?php if ( 'Small Bites' === $category[0] ) { ?> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/small-bites.png" width="130" height="31" alt="Small Bites" /><?php } ?></span><?php
 			}
 		?>
 
-		<!--<sub class="sub-header">
-  		<span class="sub-header-default"></span>
-		</sub>-->
 		<?php endif; ?>
 
 	</hgroup>

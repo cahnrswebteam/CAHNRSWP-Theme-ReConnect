@@ -30,7 +30,7 @@ if ( is_home() ) {
 		function posts_by_year() {
 			// array to use for results
 			$years = array();
-	
+
 			// get posts from WP
 			$query = new WP_Query( array(
 				'posts_per_page' => -1,
@@ -40,42 +40,22 @@ if ( is_home() ) {
 				'post_status' => 'publish',
 				// exclude Connections stuff if archiving it on this site...
 			) );
-			
+
 			$posts = $query->get_posts();
-		
+
 			// loop through posts, populate $years arrays
 			foreach( $posts as $post ) {
 				$years[ date( 'Y', strtotime( $post->post_date ) ) ][] = $post;
 			}
-		
+
 			// reverse sort by year
 			krsort( $years );
-		
+
 			return $years;
 		}
 	?>
 
-	<?php /*foreach ( posts_by_year() as $year => $posts ) : ?>
-  	<?php if ( $year != get_the_time( 'Y' ) ) : ?>
-		<section class="row single pad-ends">
-			<header class="section-header">
-				<h2><a href="<?php echo get_year_link( $year ); ?>"><?php echo $year; ?></a></h2>
-			</header>
-			<div class="column guttered">	
-				<ul>
-				<?php foreach( $posts as $post ) : setup_postdata( $post ); ?>
-					<li>
-						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					</li>
-				<?php endforeach; ?>
-				</ul>
-			</div>
-		</section>
-		<?php endif; ?>
-	<?php endforeach;*/ ?>
-
 	<?php foreach ( posts_by_year() as $year => $posts ) : ?>
-  	<?php //if ( $year != get_the_time( 'Y' ) ) : ?>
 		<?php $year_link = ( $year == get_the_time( 'Y' ) ) ? trailingslashit( get_home_url() ) : get_year_link( $year ); ?>
 		<section class="row single pad-ends gutter">
 			<header class="section-header">
@@ -94,7 +74,6 @@ if ( is_home() ) {
 				</div>
 			<?php break; endforeach; ?>
 		</section>
-		<?php //endif; ?>
 	<?php endforeach; ?>
 
 	<?php get_template_part( 'parts/footers' ); ?>
