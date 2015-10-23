@@ -17,7 +17,19 @@
 			<?php next_post_link( '&laquo; %link' ); ?>
 		</div>
 		<div class="column two">
-			<?php previous_post_link( '%link &raquo;' ); ?>
+			<?php // If the previous post was published in a different month, it probably belongs to another issue - link to it instead.
+			$current_post_date = (int)get_the_date( 'Ym' );
+			$previous_post = get_previous_post();
+			if ( ! empty( $previous_post ) ) {
+				$previous_post_date = (int)get_the_date( 'Ym', $previous_post->ID );
+				$previous_post_year = get_the_date( 'Y', $previous_post->ID );
+				if ( $previous_post_date < $current_post_date ) {
+					echo '<a href="' . get_year_link( $previous_post_year ) . '">Previous Issue</a> &raquo;';
+				} else {
+					previous_post_link( '%link &raquo;' );
+				}
+			}
+			?>
 		</div>
 	</section><!--pager-->
 </footer>
