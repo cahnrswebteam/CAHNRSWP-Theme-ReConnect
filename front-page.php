@@ -64,10 +64,10 @@
 				<div class="column">
 				<?php while ( $alumni_news->have_posts() ) : $alumni_news->the_post(); ?>
 				<?php
-					if ( in_category( 'profile' ) ) {
-						get_template_part( 'articles/basic' );
-					} elseif ( in_category( array( 'future-cougs', 'classmate-notes' ) ) ) {
+					if ( in_category( array( 'future-cougs', 'classmate-notes' ) ) ) {
 						get_template_part( 'articles/full-content' );
+					} else {
+						get_template_part( 'articles/basic' );
 					}
 				?>
 				<?php endwhile; ?>

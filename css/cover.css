@@ -111,7 +111,8 @@ article:last-of-type {
 }
 .cover-suite figure,
 .features figure,
-.category-profile figure {
+.category-profile figure,
+.category-alumni-news figure {
 	height: 100%;
 	position: absolute;
 }
@@ -201,35 +202,45 @@ h3 {
 
 /* Features */
 .features article:before,
-.features article:after {
+.features article:after,
+.category-alumni-news:before,
+.category-alumni-news:after {
 	content: ' ';
 	display: table;
 }
-.features article:after {
+.features article:after,
+.category-alumni-news:after {
 	clear: both;
 }
 .features .article-summary,
-.features figure {
+.features figure,
+.category-alumni-news .article-summary,
+.category-alumni-news figure {
 	box-sizing: border-box;
 	width: 50%;
 }
-.features figure {
+.features figure,
+.category-alumni-news figure {
 	padding: 0 1rem 0 0;
 }
-.features article:nth-of-type(even) figure {
+.features article:nth-of-type(even) figure,
+.category-alumni-news:nth-of-type(even) figure {
 	padding: 0 0 0 1rem;
 	right: 0;
 }
-.features .article-summary {
+.features .article-summary,
+.category-alumni-news .article-summary {
 	float: left;
 	margin: 0 0 0 50%;
 	padding: 0.5rem 0 0.5rem 1rem;
 }
-.features article:nth-of-type(even) .article-summary {
+.features article:nth-of-type(even) .article-summary,
+.category-alumni-news:nth-of-type(even) .article-summary {
 	margin: 0 50% 0 0;
 	padding: 0.5rem 1rem 0.5rem 0;
 }
-.features article:nth-of-type(even) .more-button {
+.features article:nth-of-type(even) .more-button,
+.category-alumni-news:nth-of-type(even) .more-button {
 	text-align: right;
 }
 
@@ -275,7 +286,7 @@ h3 {
 	display: block;
 	visibility: hidden;
 }
-.small-bites .article-summary {
+.small-bites .has-featured-image .article-summary {
 	padding-top: 1rem;
 }
 

@@ -1,0 +1,62 @@
+.main-header {
+	overflow: visible;
+}
+.main-header sub {
+	color: #7d4e11; color: #532400;
+}
+.sub-header:after {
+	color: #f2e7c9;
+	content: 'magazine 2012';
+	display: block;
+	font-size: 22px;
+	position: absolute;
+	right: 2.2rem;
+	text-transform: none;
+	top: 2rem;
+}
+.cover-feature header {
+	padding-bottom: 1rem;
+}
+.cover-feature h1 {
+	font-size: 1.5rem;
+	line-height: 1.3em;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.7); 
+}
+.cover-feature h1 a {
+	color: #dcc29f;
+}
+.cover-feature h1 a .emphasized {
+	color: #fff;
+	display: inline-block;
+	font-family: Palatino, Palatino Linotype, Book Antiqua, serif;
+	font-size: 2.3rem;
+	line-height: 1.2em;
+	padding-top: 0.5rem;
+}
+.cover-feature h1 a:hover,
+.cover-feature h1 a:hover .emphasized {
+	color: #c60c30;
+}
+.cover-feature .article-summary {
+	background: rgba(255,255,255,0.8);
+	padding: 1rem 0 0.2rem 1rem;
+	position: relative;
+}
+.cover-feature .article-summary:after {
+	background: inherit;
+	content: '';
+	height: 100%;
+	position: absolute;
+	right: -9999rem;
+	top: 0;
+	width: 9999rem;
+}
+.cover-feature .teaser .article-summary p {
+	font-size: 14px;
+}
+.section-header h2 {
+	background-color: #532400;
+}
+.flag {
+	background: rgba(152,30,50,0.8);
+}

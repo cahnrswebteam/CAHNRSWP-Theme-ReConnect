@@ -1,11 +1,11 @@
-.sub-header {
+.main-header sub {
 	color: #5e6a71;
 }
 .cover-feature header {
 	text-align: right;
 }
 .cover-feature h1 {
-	background: rgba(255, 255, 255, 0.8);
+	background: rgba(255,255,255,0.8);
 	color: #5e6a71;
 	display: inline-block;
 	font-weight: normal;
