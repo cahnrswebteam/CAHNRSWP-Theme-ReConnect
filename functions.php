@@ -4,7 +4,6 @@ class WSU_CAHNRS_ReConnect_Theme {
 
 	public function __construct() {
 		add_action( 'init', array( $this, 'init' ) );
-		add_action( 'wp_head', array( $this, 'ie_compat' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 21 );
 		add_filter( 'body_class', array( $this, 'body_class' ) );
 		add_filter( 'theme_page_templates', array( $this, 'theme_page_templates' ) );
@@ -53,30 +52,34 @@ class WSU_CAHNRS_ReConnect_Theme {
 	}
 
 	/**
-	 * Yep.
-	 */
-	public function ie_compat() {
-		echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">';
-	}
-
-	/**
 	 * Enqueue scripts and styles required for front end pageviews.
 	 */
 	public function enqueue_scripts() {
 		wp_dequeue_style( 'spine-theme-extra' );
-		if ( is_front_page() || is_year() ) {
+		if ( is_front_page() || is_month() ) {
 			wp_enqueue_style( 'reconnect', get_stylesheet_directory_uri() . '/css/cover.css', array( 'spine-theme' ) );
-			$year = get_the_time( 'Y' );
+			
+			if ( is_front_page() ) {
+				$recent_post = new WP_Query( 'posts_per_page=1' );
+				while ( $recent_post->have_posts() ) : $recent_post->the_post();
+					$year = get_the_time( 'Y-m' );
+				endwhile;
+			} else {
+				$year = get_the_time( 'Y-m' );
+			}
+			
 			$year_stylesheet_path = __DIR__ . '/css/' . $year . '.css';
+			
 			if ( file_exists( $year_stylesheet_path ) ) {
 				wp_enqueue_style( 'reconnect-' . $year, get_stylesheet_directory_uri() . '/css/' . $year . '.css' );
 			}
+			/**/
 		}
 		/*if ( is_front_page() || is_year() || is_single() ) {
 			$year = get_the_time( 'Y' );
 			wp_enqueue_style( 'reconnect-year', get_stylesheet_directory_uri() . '/css/' . $year . '.css' );
 		}*/
-		if ( is_year() ) {
+		if ( is_month() ) {
 			wp_enqueue_script( 'reconnect', get_stylesheet_directory_uri() . '/js/reconnect.js', array( 'jquery' ) );
 		}
 	}

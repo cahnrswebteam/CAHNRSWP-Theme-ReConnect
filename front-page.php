@@ -5,9 +5,11 @@
 	<?php get_template_part( 'parts/headers' ); ?>
 
 	<?php
-		$year = is_year() ? get_the_time( 'Y' ) : date( 'Y' );
+		$year = is_month() ? get_the_time( 'Y' ) : date( 'Y' );
+		$month = is_month() ? get_the_time( 'n' ) : date( 'n' );
 		$common_args = array(
 			'year' => $year,
+			'month' => $month,
 			'posts_per_page' => -1,
 		);
 	?>

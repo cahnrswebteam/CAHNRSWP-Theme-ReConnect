@@ -2,9 +2,12 @@
 
 	<hgroup>
 
-		<?php $year = get_the_time( 'Y' ); ?>
+		<?php
+			$year = get_the_time( 'Y' );
+			$month = get_the_time( 'm' );
+		?>
 
-		<?php if ( is_front_page() || is_year() ) : ?>
+		<?php if ( is_front_page() || is_month() ) : ?>
 
 		<nav class="reconnect-header-nav">
 			<?php
@@ -26,8 +29,8 @@
 			<span class="sup-header-default">
 				<?php
 					$default_header = get_stylesheet_directory_uri() . '/images/reconnect.png';
-					$current_header_path = dirname( __DIR__ ) . '/images/reconnect-' . $year . '.png';
-					$current_header = get_stylesheet_directory_uri() . '/images/reconnect-' . $year . '.png';
+					$current_header_path = dirname( __DIR__ ) . '/images/reconnect-' . $year . '-' . $month . '.png';
+					$current_header = get_stylesheet_directory_uri() . '/images/reconnect-' . $year . '-' . $month . '.png';
 					$header_img = ( file_exists( $current_header_path ) ) ? $current_header : $default_header;
 				?>
 				<img src="<?php echo esc_url( $header_img ); ?>" width="728" height="86" alt="ReConnect <?php echo $year; ?>" />
@@ -58,7 +61,7 @@
 					</dl>
 				</div>
 			</div><sup class="sup-header">
-				<?php if ( is_single() || is_year() ) : ?><span class="year"><?php echo $year; ?></span> <?php endif; ?><span class="re">Re</span>Connect
+				<?php if ( is_single() || is_month() ) : ?><span class="year"><?php echo $year; ?></span> <?php endif; ?><span class="re">Re</span>Connect
 			</sup>
 		</div>
 
