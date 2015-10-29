@@ -37,22 +37,8 @@
 .cover-feature h1 a:hover .emphasized {
 	color: #c60c30;
 }
-.cover-feature .article-summary {
-	background: rgba(255,255,255,0.8);
-	padding: 1rem 0 0.2rem 1rem;
-	position: relative;
-}
-.cover-feature .article-summary:after {
-	background: inherit;
-	content: '';
-	height: 100%;
-	position: absolute;
-	right: -9999rem;
-	top: 0;
-	width: 9999rem;
-}
-.cover-feature .teaser .article-summary p {
-	font-size: 14px;
+.cover-feature .teaser .article-summary {
+	width: 55%;
 }
 .section-header h2 {
 	background-color: #532400;

@@ -4,9 +4,9 @@
 
 	function resize() {
 		if ($window.width() < 990) {
-			return $('.cover-stories').addClass('verso');
+			return $('.cover-feature').addClass('verso');
 		}
-			$('.cover-stories').removeClass('verso').removeAttr('style');
+			$('.cover-feature').removeClass('verso').css('margin-left','');
 	}
 
 	$window.resize(resize).trigger('resize');

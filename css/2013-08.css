@@ -1,0 +1,31 @@
+.sub-header {
+	background: rgba(225,184,28,0.80);
+}
+.sub-header:before,
+.sub-header:after {
+	background: inherit;
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 9999rem;
+}
+.sub-header:before {
+	left: -9999rem;
+	margin-left: -198px;
+}
+.sub-header:after {
+	right: -9999rem;
+}
+.cover-feature .teaser .article-summary {
+	width: 85%;
+}
+.section-header h2 {
+	background: #ffb81c;
+}
+@media screen and (max-width:989px) {
+	.sub-header:before {
+		margin-left: 0;
+	}
+}

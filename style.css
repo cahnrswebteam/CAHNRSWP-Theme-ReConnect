@@ -192,7 +192,6 @@ Template: spine
 	background-size: cover;
 	height: 500px;
 	margin-top: -3rem;
-	text-align: right;
 }
 .spine-main-index .column a {
 	height: 100%;
@@ -202,24 +201,31 @@ Template: spine
 	width: 100%;
 	z-index: 1;
 }
-.spine-main-index .column h3 {
-	background: rgba(255,255,255,0.75);
-	display: inline-block;
-	font-weight: normal;
-	margin: 3rem -2rem 4rem 0;
-	padding: 0.5rem 2rem 0.5rem 1rem;
-	text-transform: uppercase;
+.online-exclusive-flag {
+	color: #fff;
+	font-size: 1.3rem;
+	font-style: italic;
+	padding-top: 1.6em;
 }
 .archive-title h3 {
+	background: rgba(255,255,255,0.75);
+	display: inline-block;
 	float: right;
+	font-weight: normal;
+	margin: 3rem -2rem 6rem 0;
+	padding: 0.5rem 2rem 0.5rem 1rem;
 	position: relative;
+	text-transform: uppercase;
+}
+ .archive-title .online-exclusive-flag + h3 {
+	margin-top: 0;
 }
 .archive-title h3:after {
+	bottom: -4rem;
 	color: #fff;
 	content: '+';
 	right: 2rem;
 	position: absolute;
-	top: 4rem;
 }
 .archive-title h4 {
 	background: rgba(255,255,255,0.75);
@@ -413,5 +419,8 @@ iframe {
 	}
 	.single-post:not(.has-featured-image) .pad-ends .column {
 		padding-top: 4rem;
+	}
+	.archive-title h3 {
+		font-size: 1.5rem;
 	}
 }

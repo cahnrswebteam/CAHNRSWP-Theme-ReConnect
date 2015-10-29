@@ -1,0 +1,57 @@
+/* Sub-header */
+.sub-header {
+	background: rgba(83,36,0,0.75);
+}
+.sub-header:before,
+.sub-header:after {
+	background: inherit;
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 9999rem;
+}
+.sub-header:before {
+	left: -9999rem;
+	margin-left: -198px;
+}
+.sub-header:after {
+	right: -9999rem;
+}
+
+/* Cover story */
+.cover-feature header {
+	padding-bottom: 0;
+}
+.cover-feature h1 {
+	font-size: 2.5rem;
+	font-weight: bold;
+	line-height: 1;
+	text-shadow: 1px 1px 8px rgba(0,0,0,0.85);
+}
+.cover-feature h1 a {
+	color: #fff;
+}
+.cover-feature h1 a:hover {
+	color: #c60c30;
+}
+.cover-feature .article-summary {
+	display: none;
+}
+
+/* Section headings */
+.section-header h2 {
+	background-color: #532400;
+}
+
+/* Flags */
+.flag {
+	background: rgba(83,36,0,0.8);
+}
+
+@media screen and (max-width:989px) {
+	.sub-header:before {
+		margin-left: 0;
+	}
+}
