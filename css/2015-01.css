@@ -69,7 +69,7 @@
 }
 
 @media screen and (max-width:989px) {
-	.sub-header:before {
+	.home .sub-header:before {
 		margin-left: 0;
 	}
 }
