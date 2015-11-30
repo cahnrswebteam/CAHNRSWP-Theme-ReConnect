@@ -288,24 +288,6 @@ h3 {
 	padding-top: 1rem;
 }
 
-/* More buttons */
-.more-button {
-	font-weight: bold;
-	padding-bottom: 0;
-}
-.more-button a {
-	border: 1px solid #981e32;
-	color: #981e32;
-	display: inline-block;
-	padding: .5rem 1rem;
-	text-transform: uppercase;
-	transition: background-color .2s linear, color .2s linear;
-}
-.more-button a:hover {
-	background-color: #981e32;
-	color: #fff;
-}
-
 /* Spine mod */
 .home #spine:not(.skimmed) #glue:before {
 	opacity: 0.75;

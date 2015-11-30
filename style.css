@@ -242,6 +242,24 @@ Template: spine
 	padding: 0.5rem 2rem 0.5rem 1rem;
 }
 
+/* More button */
+.more-button {
+	font-weight: bold;
+	padding-bottom: 0;
+}
+.more-button a {
+	border: 1px solid #981e32;
+	color: #981e32;
+	display: inline-block;
+	padding: .5rem 1rem;
+	text-transform: uppercase;
+	transition: background-color .2s linear, color .2s linear;
+}
+.more-button a:hover {
+	background-color: #981e32;
+	color: #fff;
+}
+
 /* Article elements */
 .article-date,
 .article-footer {
@@ -388,8 +406,39 @@ figcaption {
 }
 
 /* Pager */
+.pager {
+	padding-bottom: 2rem;
+}
 .pager .two {
 	text-align: right;
+}
+.publications.pager {
+	text-align: center;
+}
+.pager,
+.pager .column.one {
+	position: relative;
+}
+.pager .prev {
+	left: 2rem;
+	position: absolute;
+}
+.pager .next {
+	position: absolute;
+	right: 2rem;
+}
+.page-numbers:not(.prev):not(.next):not(.dots) {
+	border: 1px solid #d7dadb;
+	padding: 0.25rem 0.5rem;
+	transition: background 0.5s ease, color 0.5s ease;
+}
+.page-numbers:not(.prev):not(.next):not(.dots):not(.current):hover {
+	background: #981e32;
+	color: #fff;
+}
+.page-numbers.current {
+	background: #5e6a71;
+	color: #fff;
 }
 
 /* Search form */
@@ -548,5 +597,40 @@ input[type=submit].cahnrs-search-submit:focus {
 	}
 	.archive-title h3 {
 		font-size: 1.5rem;
+	}
+	.pager .column {
+		padding: 1px 0;
+	}
+	.pager .prev,
+	.pager .next {
+		height: 100%;
+		overflow: hidden;
+		top: 0;
+		width: 1.5rem;
+		text-indent: 100%;
+		white-space: nowrap;
+	}
+	.pager .prev:before,
+	.pager .next:before {
+		box-sizing: border-box;
+		border: 1px solid #d7dadb;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		text-indent: 0;
+		top: 0;
+		transition: background 0.5s ease, color 0.5s ease;
+		width: 100%;
+	}
+	.pager .prev:before {
+		content: '«';
+	}
+	.pager .next:before {
+		content: '»';
+	}
+	.pager .prev:hover:before,
+	.pager .next:hover:before {
+		background: #981e32;
+		color: #fff;
 	}
 }

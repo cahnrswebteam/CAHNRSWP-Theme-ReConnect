@@ -72,6 +72,9 @@ class WSU_CAHNRS_ReConnect_Theme {
 				wp_enqueue_style( 'reconnect-' . $date, get_stylesheet_directory_uri() . '/css/' . $date . '.css', array( 'reconnect' ) );
 			}
 		}
+		if ( is_author() ) {
+			wp_enqueue_style( 'author', get_stylesheet_directory_uri() . '/css/author.css', array( 'spine-theme-child' ) );
+		}
 	}
 
 	/**

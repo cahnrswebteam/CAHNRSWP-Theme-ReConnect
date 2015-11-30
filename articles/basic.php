@@ -2,7 +2,7 @@
 $additional_classes = array();
 if ( in_category( 'cover-story' ) ) {
 	$additional_classes[] = 'cover-suite';
-	if ( is_archive() ) {
+	if ( is_date() ) {
 		$additional_classes[] = 'guttered';
 	}
 }
@@ -18,8 +18,14 @@ if ( in_category( 'cover-story' ) ) {
 		</figure><?php
 		}
 	?>
-	<?php if ( has_tag( 'online-exclusive' ) ) : ?><a href="<?php the_permalink(); ?>" class="flag">Online Exclusive</a><?php endif; ?>
-  <?php if ( in_category( 'profile' ) ) : ?><a href="<?php the_permalink(); ?>" class="flag">Alumni Profile</a><?php endif; ?>
+	<?php if ( is_author() && ! in_category( array( 'classmate-notes', 'future-cougs' ) ) && has_post_thumbnail() ) : ?>
+		<?php $categories = ''; ?>
+		<?php $categories = get_the_category(); ?>
+		<a href="<?php echo get_category_link( $categories[0]->term_id ); ?>" class="flag"><?php echo $categories[0]->name; ?></a>
+	<?php else: ?>
+		<?php if ( has_tag( 'online-exclusive' ) ) : ?><a href="<?php the_permalink(); ?>" class="flag">Online Exclusive</a><?php endif; ?>
+  	<?php if ( in_category( 'profile' ) ) : ?><a href="<?php the_permalink(); ?>" class="flag">Alumni Profile</a><?php endif; ?>
+	<?php endif; ?>
   <div class="article-summary">
 		<header class="article-header">
 			<h3 class="article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -33,7 +39,7 @@ if ( in_category( 'cover-story' ) ) {
 				the_excerpt();
 			}
 		?>
-		<?php if ( in_category( array( 'cover-story', 'feature', 'profile' ) ) ) : ?>
+		<?php if ( is_author() || in_category( array( 'cover-story', 'feature', 'profile' ) ) ) : ?>
 		<p class="more-button">
 			<a href="<?php the_permalink(); ?>">Read More</a>
 		</p>

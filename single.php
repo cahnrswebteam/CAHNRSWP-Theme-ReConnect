@@ -12,7 +12,7 @@
 <?php get_template_part( 'parts/single-layout', get_post_type() ); ?>
 
 <footer class="main-footer">
-	<section class="row halves pager prevnext gutter pad-ends">
+	<section class="row halves pager prevnext gutter">
 		<div class="column one">
 			<?php next_post_link( '&laquo; %link' ); ?>
 		</div>
