@@ -417,6 +417,7 @@ figcaption {
 }
 .pager,
 .pager .column.one {
+	min-height: 1px;
 	position: relative;
 }
 .pager .prev {
