@@ -1,5 +1,7 @@
 <?php
 
+include_once( __DIR__ . '/includes/video-embed.php' );
+
 class WSU_CAHNRS_ReConnect_Theme {
 
 	public function __construct() {
@@ -9,7 +11,6 @@ class WSU_CAHNRS_ReConnect_Theme {
 		add_filter( 'theme_page_templates', array( $this, 'theme_page_templates' ) );
 		add_action( 'widgets_init', array( $this, 'widgets_init' ) );
 		add_filter( 'get_the_excerpt', array( $this, 'get_the_excerpt' ), 5 );
-		add_filter( 'the_content', array( $this, 'filter_ptags_iframes') );
 	}
 
 	/**
@@ -57,30 +58,19 @@ class WSU_CAHNRS_ReConnect_Theme {
 	public function enqueue_scripts() {
 		wp_dequeue_style( 'spine-theme-extra' );
 		if ( is_front_page() || is_month() ) {
-			wp_enqueue_style( 'reconnect', get_stylesheet_directory_uri() . '/css/cover.css', array( 'spine-theme' ) );
-			
+			wp_enqueue_style( 'reconnect', get_stylesheet_directory_uri() . '/css/cover.css', array( 'spine-theme-child' ) );
 			if ( is_front_page() ) {
 				$recent_post = new WP_Query( 'posts_per_page=1' );
 				while ( $recent_post->have_posts() ) : $recent_post->the_post();
-					$year = get_the_time( 'Y-m' );
+					$date = get_the_time( 'Y-m' );
 				endwhile;
 			} else {
-				$year = get_the_time( 'Y-m' );
+				$date = get_the_time( 'Y-m' );
 			}
-			
-			$year_stylesheet_path = __DIR__ . '/css/' . $year . '.css';
-			
-			if ( file_exists( $year_stylesheet_path ) ) {
-				wp_enqueue_style( 'reconnect-' . $year, get_stylesheet_directory_uri() . '/css/' . $year . '.css' );
+			$date_stylesheet_path = __DIR__ . '/css/' . $date . '.css';
+			if ( file_exists( $date_stylesheet_path ) ) {
+				wp_enqueue_style( 'reconnect-' . $date, get_stylesheet_directory_uri() . '/css/' . $date . '.css', array( 'reconnect' ) );
 			}
-			/**/
-		}
-		/*if ( is_front_page() || is_year() || is_single() ) {
-			$year = get_the_time( 'Y' );
-			wp_enqueue_style( 'reconnect-year', get_stylesheet_directory_uri() . '/css/' . $year . '.css' );
-		}*/
-		if ( is_month() ) {
-			wp_enqueue_script( 'reconnect', get_stylesheet_directory_uri() . '/js/reconnect.js', array( 'jquery' ) );
 		}
 	}
 
@@ -108,8 +98,8 @@ class WSU_CAHNRS_ReConnect_Theme {
 		unset( $templates['templates/margin-right.php'] );
 		unset( $templates['templates/section-label.php'] );
 		unset( $templates['templates/side-left.php'] );
-		//unset( $templates['templates/side-right.php'] );
-		//unset( $templates['templates/single.php'] );
+		unset( $templates['templates/side-right.php'] );
+		unset( $templates['templates/single.php'] );
 		return $templates;
 	}
 
@@ -145,13 +135,6 @@ class WSU_CAHNRS_ReConnect_Theme {
 			$text = substr( $text, 0, strpos( $text, '</p>' ) + 4 );
 		}
 		return $text;
-	}
-
-	/**
-	 * Remove p tag wrapper from iframes.
-	 */
-	public function filter_ptags_iframes( $content ) {
-  return preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
 	}
 
 }

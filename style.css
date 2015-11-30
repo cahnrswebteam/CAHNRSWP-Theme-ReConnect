@@ -6,6 +6,7 @@ Author: CAHNRS Communications, Phil Cable
 Author URI: http://cahnrs.wsu.edu/communications/
 Template: spine
 */
+
 /* CAHNRS header */
 .main-header {
 	background: none;
@@ -109,6 +110,7 @@ Template: spine
 .main-header sup {
 	font-weight: bold;
 }
+
 /* Additional header elements */
 .main-header sup .year {
 	color: #5e6a71;
@@ -139,6 +141,7 @@ Template: spine
 	vertical-align: bottom;
 	width: auto;
 }
+
 /* Section headings (Front and Issues page) */
 .section-header {
 	position: relative;
@@ -173,6 +176,7 @@ Template: spine
 .small-bites h2 img {
 	vertical-align: bottom;
 }
+
 /* Sections and headings (Issues page) */
 .spine-main-index:hover section:not(:hover) {
 	opacity: 0.4;
@@ -238,14 +242,14 @@ Template: spine
 	padding: 0.5rem 2rem 0.5rem 1rem;
 }
 
-/* Article stuff */
+/* Article elements */
 .article-date,
 .article-footer {
 	display: none;
 }
 .single-post .dropcap {
 	float: left;
-	font-family: Palatino, Palatino Linotype, Book Antiqua, serif;
+	font-family: Palatino, 'Palatino Linotype', 'Book Antiqua', serif;
 	font-size: 3.5em;
 	height: 0.8em;
 	line-height: 0;
@@ -345,6 +349,7 @@ img.alignright {
 	border: none;
 }
 
+/* Image captions */
 figcaption {
 	color: #8d959a;
 	font-size: 0.9em;
@@ -352,14 +357,122 @@ figcaption {
 	text-align: center;
 }
 
-iframe {
+/* Video */
+.reconnect-video-wrapper {
+	margin: 0.5rem 0 1.5rem;
+}
+.reconnect-video-wrapper.alignright {
 	float: right;
-	margin: 0 -2rem 1rem 1rem;
+	margin: 0.5rem -2rem 0.5rem 2rem;
+	width: 60%;
+}
+.reconnect-video-wrapper p {
+	color: #8d959a;
+	font-size: 0.9em;
+	line-height: 1.5em;
+	text-align: center;
+	padding: 5px 0;
+}
+.reconnect-video-wrapper div {
+	height: 0;
+	padding-bottom: 56.25%;
+	position: relative;
+	width: 100%;
+}
+.reconnect-video-wrapper div iframe {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
 }
 
 /* Pager */
 .pager .two {
 	text-align: right;
+}
+
+/* Search form */
+.cahnrs-search {
+	padding: 0;
+	margin: 0 0 1rem 0;
+	position: relative;
+}
+.cahnrs-search .screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+}
+.cahnrs-search-field {
+	background: #fff;
+	border-radius: 1px;
+	border: 1px solid #5e6a71;
+	box-sizing: border-box;
+	color: #8d959a;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	font-size: 1em;
+	height: 2rem;
+	line-height: 20px;
+	margin: 0;
+	padding: 0.5rem 2rem 0.5rem 0;
+	width: 100%;
+	-webkit-appearance: textfield;
+}
+.cahnrs-search-field:focus {
+	color: #981e32;
+}
+.cahnrs-search-field::-webkit-input-placeholder {
+	color: #8d959a;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	font-size: 14px;
+	font-style: italic;
+}
+.cahnrs-search-field:-moz-placeholder {
+	color: #8d959a;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	font-size: 14px;
+	font-style: italic;
+	opacity: 1;
+}
+.cahnrs-search-field::-moz-placeholder {
+	color: #8d959a;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	font-size: 14px;
+	font-style: italic;
+	opacity: 1;
+}
+.cahnrs-search-field:-ms-input-placeholder {  
+	color: #8d959a;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	font-size: 14px;
+	font-style: italic;
+}
+input[type=submit].cahnrs-search-submit {
+	background: #5e6a71;
+	border: none;
+	border-radius: 1px;
+	color: #fff;
+	font-family: Spine-Icons;
+	font-size: 1em;
+	height: 2rem;
+	margin: 0;
+	padding: 0; padding: 4px 0 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 2rem;
+}
+input[type=submit].cahnrs-search-submit:hover {
+	color: #fff;
+	background: #981e32;
+	border-width: 0;
+}
+input[type=submit].cahnrs-search-submit:focus {
+	color: #fff;
+	background: #c60c30;
+	border-width: 0;
 }
 
 @media screen and (max-width:791px) {
@@ -371,6 +484,8 @@ iframe {
 	.article-body blockquote.pullquote {
 		margin-right: -1rem;
 	}
+}
+
 @media only screen and (max-width:693px) {
 	.gallery-columns-1 .gallery-item,
 	.gallery-columns-2 .gallery-item,
@@ -407,7 +522,18 @@ iframe {
 		float: none;
 		margin: 0 auto;
 	}
+	.reconnect-video-wrapper,
+	.reconnect-video-wrapper.alignleft,
+	.reconnect-video-wrapper.alignright {
+		float: none;
+		margin: 1rem -2rem 1rem -2rem;
+		width: 100vw;
+	}
+	.reconnect-video-wrapper p {
+		padding: 5px 2rem;
+	}
 }
+
 @media only screen and (max-width:530px) {
 	.main-header span.category {
 		font-size: 0.8rem;
