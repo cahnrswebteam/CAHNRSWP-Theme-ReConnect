@@ -56,7 +56,7 @@
 						<dt><a href="http://cahnrs.wsu.edu/">College of Agricultural, Human, and Natural Resource Sciences</a></dt>
 						<span class="cahnrs-ql-padding">CAHNRS</span><dd>
 						 	<ul>
-								<li><a href="http://cahnrs.wsu.edu/academics/">Students</a></li>
+								<li><a href="http://cahnrs.wsu.edu/academics/">Academics</a></li>
 								<li><a href="http://cahnrs.wsu.edu/research/">Research</a></li>
 								<li><a href="http://cahnrs.wsu.edu/extension/">Extension</a></li>
 								<li><a href="http://cahnrs.wsu.edu/alumni/">Alumni and Friends</a></li>
@@ -71,7 +71,7 @@
 		</div>
 
 		<?php
-			if ( is_single() ) {
+			if ( is_singular( 'post' ) ) {
 				$category = wp_get_post_categories( $post->ID, array( 'fields' => 'names' ) );
 				?><span class="category"><?php echo $category[0]; ?><?php if ( 'Small Bites' === $category[0] ) { ?> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/small-bites.png" width="130" height="31" alt="Small Bites" /><?php } ?></span><?php
 			}

@@ -2,7 +2,7 @@
 .sub-header {
 	background: rgba(83,36,0,0.75);
 }
-.sub-header:before,
+/*.sub-header:before,
 .sub-header:after {
 	background: inherit;
 	content: '';
@@ -18,14 +18,14 @@
 }
 .sub-header:after {
 	right: -9999rem;
-}
+}*/
 
 /* Cover story */
 .cover-feature header {
 	padding-bottom: 0;
 }
 .cover-feature h1 {
-	font-size: 2.5rem;
+	
 	font-weight: bold;
 	line-height: 1;
 	text-shadow: 1px 1px 8px rgba(0,0,0,0.85);

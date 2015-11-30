@@ -47,7 +47,13 @@
 				</header>
 				<div class="column">
 				<?php while ( $feature_stories->have_posts() ) : $feature_stories->the_post(); ?>
-				<?php get_template_part( 'articles/basic' ); ?>
+					<?php
+						if ( has_tag( 'video' ) )  {
+							get_template_part( 'articles/video' );
+						} else {
+							get_template_part( 'articles/basic' );
+						}
+					?>
 				<?php endwhile; ?>
 				</div><!--/column-->
 			</section>

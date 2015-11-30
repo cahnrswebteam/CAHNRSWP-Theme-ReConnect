@@ -1,11 +1,13 @@
 <?php
-$additional_classes = array(
-	'cover-feature',
-	'unbound',
-	'recto',
-);
 if ( is_front_page() ) {
-	$additional_classes[] = 'verso';
+	$additional_classes = array(
+		'cover-feature',
+		'unbound',
+		'recto',
+		'verso',
+	);
+} else {
+	$additional_classes = array( 'cover-feature' );
 }
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( $additional_classes ); ?> style="background-image: url('<?php echo esc_url( spine_get_featured_image_src() ); ?>');" data-id="<?php the_ID(); ?>" data-headline="<?php the_title(); ?>" data-anchor="<?php the_permalink(); ?>">

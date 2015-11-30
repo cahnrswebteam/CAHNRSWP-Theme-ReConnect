@@ -2,8 +2,8 @@
 .sub-header {
 	background: rgba(173,164,0,0.75);
 }
-.sub-header:before,
-.sub-header:after {
+.home .sub-header:before,
+.home .sub-header:after {
 	background: inherit;
 	content: '';
 	display: block;
@@ -12,11 +12,11 @@
 	top: 0;
 	width: 9999rem;
 }
-.sub-header:before {
+.home .sub-header:before {
 	left: -9999rem;
 	margin-left: -198px;
 }
-.sub-header:after {
+.home .sub-header:after {
 	right: -9999rem;
 }
 
