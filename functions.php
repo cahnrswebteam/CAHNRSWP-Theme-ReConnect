@@ -8,6 +8,7 @@ class WSU_CAHNRS_ReConnect_Theme {
 		add_action( 'init', array( $this, 'init' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 21 );
 		add_filter( 'body_class', array( $this, 'body_class' ) );
+		add_filter( 'nav_menu_css_class', array( $this, 'nav_menu_css_class'), 11, 3 );
 		add_filter( 'theme_page_templates', array( $this, 'theme_page_templates' ) );
 		add_action( 'widgets_init', array( $this, 'widgets_init' ) );
 		add_filter( 'get_the_excerpt', array( $this, 'get_the_excerpt' ), 5 );
@@ -87,7 +88,22 @@ class WSU_CAHNRS_ReConnect_Theme {
 		if ( is_customize_preview() ) {
 			$classes[] = 'customizer-preview';
 		}
-		$classes[] = 'spine-' . esc_attr( spine_get_option( 'spine_color' ) );
+		return $classes;
+	}
+
+	/**
+	 * Remove classes from posts page menu item when not applicable.
+	 *
+	 * @param array $classes Current list of nav menu classes.
+	 * @param WP_Post $item Post object representing the menu item.
+	 * @param stdClass $args Arguments used to create the menu.
+	 *
+	 * @return array Modified list of nav menu classes.
+	 */
+	public function nav_menu_css_class( $classes, $item, $args ) {
+		if ( 'site' === $args->theme_location && is_author() && $item->url === get_permalink( get_option( 'page_for_posts' ) ) ) {
+			$classes = array();
+		}
 		return $classes;
 	}
 
