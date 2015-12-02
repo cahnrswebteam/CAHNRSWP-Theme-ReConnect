@@ -5,14 +5,11 @@
 	<?php get_template_part( 'parts/headers' ); ?>
 
 	<?php
-		$year = is_month() || is_year() ? get_the_date( 'Y' ) : date( 'Y' );
 		$common_args = array(
-			'year' => $year,
+			'year' => get_the_date( 'Y' ),
+			'monthnum' => get_the_date( 'n' ),
 			'posts_per_page' => -1,
 		);
-		if ( is_month() ) {
-			$common_args['monthnum'] = get_the_date( 'n' );
-		}
 	?>
 
 	<?php

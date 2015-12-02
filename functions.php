@@ -118,7 +118,7 @@ class WSU_CAHNRS_ReConnect_Theme {
 		unset( $templates['templates/section-label.php'] );
 		unset( $templates['templates/side-left.php'] );
 		unset( $templates['templates/side-right.php'] );
-		unset( $templates['templates/single.php'] );
+		//unset( $templates['templates/single.php'] );
 		return $templates;
 	}
 

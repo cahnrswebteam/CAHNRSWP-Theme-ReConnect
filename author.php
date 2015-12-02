@@ -8,17 +8,41 @@
 
 	<div class="column one">
 
-		<?php if ( is_paged() ) : ?>
+	<?php
+		/*$base = 'https://people.wsu.edu/wp-json/wp/v2/people?filter[meta_key]=_wsuwp_profile_ad_nid&filter[meta_value]=';
+		$request_url = $base . get_the_author_meta( 'user_login' );
+		$response = wp_remote_get( $request_url );
+		if ( is_wp_error( $response ) ) {
+			echo '<!-- remote get error -->';
+		}
+		$data = wp_remote_retrieve_body( $response );
+		if ( empty( $data ) ) {
+			echo '<!-- remote retrieve error -->';
+		}
+		$person = json_decode( $data );
+		if ( $person ) {
+			$author_name = $person->title->rendered;
+			$author_photo = $person->profile_photo;
+			$author_bio = $person->content->rendered;
+		} else {*/
+			$author_name = get_the_author();
+			$author_bio = $person->content->rendered;
+		//}
+	?>
 
-		<h2 class="author-title">Articles by <?php echo get_the_author(); ?></h2>
+	<?php if ( is_paged() ) : ?>
 
-		<?php else: ?>
+		<h1 class="author-title">Articles by <?php echo esc_attr( $author_name ); ?></h1>
 
-		<h2 class="author-title"><?php echo get_the_author(); ?></h2>
+	<?php else: ?>
 
-		<!--<img src="" class="author-photo" />
+		<h1 class="author-title"><?php echo esc_attr( $author_name ); ?></h1>
 
-		<p>Author bio.</p>-->
+		<?php if ( $author_photo ) : ?>
+		<img src="<?php esc_url( $author_photo ); ?>" class="author-photo" />
+		<?php endif; ?>
+
+		<?php if ( $author_bio ) { echo wp_kses_post( $author_bio ); } ?>
 
 		<h2 class="author-articles">Articles</h2>
 
