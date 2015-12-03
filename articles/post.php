@@ -15,7 +15,7 @@
 		<hgroup class="source">
 			<time class="article-date" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo get_the_date(); ?></time>
 			<?php
-				if ( ! in_category( array( 'future-cougs', 'classmate-notes' ) ) ) :
+				if ( ! in_category( array( 'future-cougs', 'classmate-notes' ) ) && ! has_tag( 'video' ) ) :
 				$byline = get_post_meta( $post->ID, 'manual_byline', true );
 				//$author = $byline ? esc_html( $byline ) : get_the_author_posts_link();
 			?>
