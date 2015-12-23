@@ -219,17 +219,14 @@ Template: spine
 	margin: 3rem -2rem 6rem 0;
 	padding: 0.5rem 2rem 0.5rem 1rem;
 	position: relative;
+	text-align: right;
 	text-transform: uppercase;
+}
+.archive-title h3 .sub {
+	font-size: 0.8rem;
 }
  .archive-title .online-exclusive-flag + h3 {
 	margin-top: 0;
-}
-.archive-title h3:after {
-	bottom: -4rem;
-	color: #fff;
-	content: '+';
-	right: 2rem;
-	position: absolute;
 }
 .archive-title h4 {
 	background: rgba(255,255,255,0.75);
@@ -239,7 +236,16 @@ Template: spine
 	font-size: 1rem;
 	font-weight: normal;
 	margin: 0.5rem -2rem 0.5rem 0;
+	position: relative;
 	padding: 0.5rem 2rem 0.5rem 1rem;
+}
+.archive-title h3 + h4:before {
+	top: -3.75rem;
+	color: #fff;
+	content: '+';
+	font-size: 1.6rem;
+	right: 2rem;
+	position: absolute;
 }
 
 /* More button */

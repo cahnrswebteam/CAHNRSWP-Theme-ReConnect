@@ -334,7 +334,9 @@ h3 {
 }
 @media screen and (max-width:791px) {
 	.main-header .sup-header {
+		box-sizing: border-box;
 		padding: 2rem 1rem;
+		width: 100%;
 	}
 	.main-header sub {
 		position: relative;
