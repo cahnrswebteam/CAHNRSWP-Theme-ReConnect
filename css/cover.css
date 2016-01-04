@@ -88,9 +88,7 @@
 }
 
 /* Sections */
-.home .row.single.features .column,
-.home .row.single.alumni-news .column,
-.home .row.single.small-bites .column {
+.home .row.single .column {
 	width: 990px;
 }
 

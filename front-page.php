@@ -1,4 +1,4 @@
 <?php
-$year = get_the_date( 'Y' );
+$year = date( 'Y' );
 get_template_part( 'toc', $year );
 ?>

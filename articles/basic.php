@@ -39,7 +39,7 @@ if ( in_category( 'cover-story' ) ) {
 				the_excerpt();
 			}
 		?>
-		<?php if ( is_author() || in_category( array( 'cover-story', 'feature', 'profile' ) ) ) : ?>
+		<?php if ( is_author() || ! in_category( array( 'classmate-notes', 'future-cougs', 'small-bites' ) ) ) : ?>
 		<p class="more-button">
 			<a href="<?php the_permalink(); ?>">Read More</a>
 		</p>

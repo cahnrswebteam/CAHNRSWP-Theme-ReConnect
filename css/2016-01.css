@@ -1,0 +1,202 @@
+.home #spine:not(.skimmed) #glue:before {
+	opacity: 1;
+}
+
+/* Home nav */
+.reconnect-header-nav a {
+	background: rgba(70,78,84,0.5);
+	color: #9da3a9;
+}
+
+/* Sub-header */
+.sub-header {
+	background: #981e32;
+}
+.home .sub-header:before,
+.home .sub-header:after {
+	background: #981e32;
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 9999rem;
+}
+.home .sub-header:before {
+	left: -9999rem;
+	margin-left: -198px;
+}
+.home .sub-header:after {
+	right: -9999rem;
+}
+
+/* Cover story */
+.cover-feature {
+	background-image: url(http://m1.wpdev.cahnrs.wsu.edu/reconnect/wp-content/uploads/sites/20/2015/12/2016-feature-bg-1188x895.jpg) !important;
+}
+.cover-feature .teaser {
+	background: url(http://m1.wpdev.cahnrs.wsu.edu/reconnect/wp-content/uploads/sites/20/2015/12/2016-legends-3.png) center top no-repeat;
+	background-size: 87%;
+	height: 590px;
+}
+.cover-feature header {
+	bottom: 2rem;
+	left: 2rem;
+	padding: 0.25rem 1rem;
+	position: absolute;
+	text-align: left;
+}
+.cover-feature header:before {
+	background: #981e32;
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	left: -9999rem;
+	top: 0;
+	transition: background .2s linear;
+	width: 9999rem;
+}
+.cover-feature header:hover:before {
+	background: #c60c30;
+}
+.cover-feature h1 {
+	font-weight: normal;
+	line-height: 0.5em;
+	padding: 0;
+}
+.cover-feature a .title {
+	color: #fff;
+	line-height: 1.2em;
+	text-transform: uppercase;
+}
+.cover-feature a .sub {
+	color: #9ca3a9;
+	font-size: 1.05rem;
+}
+.cover-feature .teaser .more-button {
+	bottom: 2rem;
+	position: absolute;
+	right: 2rem;
+}
+.cover-feature .teaser .article-summary {
+	bottom: 5rem;
+	position: absolute;
+	right: 2rem;
+	width: 50%;
+}
+.cover-feature .article-summary p {
+	font-size: 1em;
+}
+
+/* Section headings */
+.section-header h2 {
+	letter-spacing: 4px;
+}
+.people .section-header h2 {
+	background-color: #c60c30;
+	background-image: -webkit-radial-gradient(center, ellipse cover, #c60c30 0%, #981e32 100%);
+	background-image: -moz-radial-gradient(center, ellipse cover, #c60c30 0%, #981e32 100%);
+	background-image: radial-gradient(ellipse at center, #c60c30 0%, #981e32 100%);
+}
+.places .section-header h2 {
+	background-color: #ada400;
+	background-image: -webkit-radial-gradient(center, ellipse cover, #ada400 0%, #8f7e35 100%);
+	background-image: -moz-radial-gradient(center, ellipse cover, #ada400 0%, #8f7e35 100%);
+	background-image: radial-gradient(ellipse at center, #ada400 0%, #8f7e35 100%);
+}
+.partners .section-header h2 {
+	background-color: #d38235;
+	background-image: -webkit-radial-gradient(center, ellipse cover, #d38235 0%, #b67233 100%);
+	background-image: -moz-radial-gradient(center, ellipse cover, #d38235 0%, #b67233 100%);
+	background-image: radial-gradient(ellipse at center, #d38235 0%, #b67233 100%);
+}
+.promise .section-header h2 {
+	background-color: #00a5bd;
+	background-image: -webkit-radial-gradient(center, ellipse cover, #00a5bd 0%, #4f868e 100%);
+	background-image: -moz-radial-gradient(center, ellipse cover, #00a5bd 0%, #4f868e 100%);
+	background-image: radial-gradient(ellipse at center, #00a5bd 0%, #4f868e 100%);
+}
+
+/* Section links and 'More' buttons */
+.places a {
+	color: #8f7e35;
+}
+.places a:hover {
+	color: #ada400;
+}
+.places .more-button a {
+	border-color: #8f7e35;
+}
+.places .more-button a:hover {
+	border-color: #ada400;
+	background: #ada400;
+	color: #fff;
+}
+.partners a {
+	color: #b67233;
+}
+.partners a:hover {
+	color: #d38235;
+}
+.partners .more-button a {
+	border-color: #b67233;
+}
+.partners .more-button a:hover {
+	border-color: #d38235;
+	background: #d38235;
+	color: #fff;
+}
+.promise a {
+	color: #4f868e;
+}
+.promise a:hover {
+	color: #00a5bd;
+}
+.promise .more-button a {
+	border-color: #4f868e;
+}
+.promise .more-button a:hover {
+	border-color: #00a5bd;
+	background: #00a5bd;
+	color: #fff;
+}
+
+/* Flags */
+.people .flag {
+	background: rgba(198,12,48,0.8);
+}
+.features.people article:nth-of-type(odd) .flag {
+	right: 51.7%;
+}
+.features.people article:nth-of-type(even) .flag {
+	right: 0;
+}
+
+@media screen and (max-width:989px) {
+	.home .sub-header:before {
+		margin-left: 0;
+	}
+}
+@media screen and (max-width:791px) {
+	.cover-feature .teaser {
+		background-position: center center;
+		background-size: 70%;
+		height: 100%;
+	}
+	.cover-feature header {
+		bottom: 6rem;
+	}
+	.cover-feature .teaser .article-summary {
+		display: none;
+	}
+	.cover-feature .teaser .more-button {
+		left: 3rem;
+		right: auto;
+	}
+}
+@media only screen and (max-width: 550px) {
+	.cover-feature .teaser {
+		background: none;
+	}
+}
