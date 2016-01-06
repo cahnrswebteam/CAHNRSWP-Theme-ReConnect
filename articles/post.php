@@ -15,9 +15,10 @@
 		<hgroup class="source">
 			<time class="article-date" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo get_the_date(); ?></time>
 			<?php
-				if ( ! in_category( array( 'future-cougs', 'classmate-notes' ) ) && ! has_tag( 'video' ) ) :
+				$author_login = get_the_author_meta( 'user_login', $post->post_author );
 				$byline = get_post_meta( $post->ID, 'manual_byline', true );
-				//$author = $byline ? esc_html( $byline ) : get_the_author_posts_link();
+				// Show bylines for cahnrs.webteam authored posts only if a manual one exists.
+				if ( 'cahnrs.webteam' !== $author_login || ( 'cahnrs.webteam' === $author_login && $byline ) ) :
 			?>
 			<cite class="article-author" role="author"><?php if ( $byline ) { echo esc_html( $byline ); } else { the_author_posts_link(); } ?></cite>
 			<?php endif; ?>
