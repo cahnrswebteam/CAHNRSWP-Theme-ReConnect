@@ -32,10 +32,10 @@
 
 /* Cover story */
 .cover-feature {
-	background-image: url(http://m1.wpdev.cahnrs.wsu.edu/reconnect/wp-content/uploads/sites/20/2015/12/2016-feature-bg-1188x895.jpg) !important;
+	background-image: url(../images/2016-cover-bg.jpg) !important;
 }
 .cover-feature .teaser {
-	background: url(http://m1.wpdev.cahnrs.wsu.edu/reconnect/wp-content/uploads/sites/20/2015/12/2016-legends-3.png) center top no-repeat;
+	background: url(../images/2016-cover-washington.png) center top no-repeat;
 	background-size: 87%;
 	height: 590px;
 }

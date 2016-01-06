@@ -411,6 +411,83 @@ figcaption {
 	width: 100%;
 }
 
+/* Story wall (Elson Floyd tribute) */
+.story-wall:after {
+	clear: both;
+	content: "";
+  display: table;
+}
+.story-wall .item {
+	box-sizing: border-box;
+	float: left;
+	margin: 0;
+	overflow: hidden;
+	padding-bottom: 53%;
+	position: relative;
+}
+.story-wall .item.tall {
+	padding-bottom: 68%;
+}
+.story-wall .portrait {
+	width: 38%;
+}
+.story-wall .landscape {
+	width: 62%;
+}
+.story-wall .item div {
+	background: #981e32;
+	bottom: 8px;
+	display: block;
+	left: 8px;
+	overflow: hidden;
+	position: absolute;
+	right: 8px;
+	text-decoration: none;
+	top: 8px;
+}
+.story-wall img {
+	display: block;
+	height: auto;
+	width: 100%;
+}
+.story-wall .flipped img {
+	bottom: 0;
+	position: absolute;
+}
+.story-wall figcaption {
+	color: #fff;
+	padding: 12px;
+	text-align: left;
+}
+.story-wall .attribution {
+	text-align: right;
+	padding-bottom: 0;
+}
+.story-wall .item .jump {
+	background: #000;
+	text-align: center;
+}
+.story-wall .jump figcaption {
+	text-align: center;
+}
+.jump a {
+	color: #fff;
+}
+.jump h3 {
+	color: #d7dadb;
+	font-weight: normal;
+	letter-spacing: 0.16em;
+	line-height: 1.7;
+	text-transform: uppercase;
+}
+.jump h3 em {
+	color: #fff;
+	font-size: 1.2em;
+	font-style: normal;
+	font-weight: bold;
+	text-transform: none;
+}
+
 /* Pager */
 .pager {
 	padding-bottom: 2rem;
@@ -531,6 +608,36 @@ input[type=submit].cahnrs-search-submit:focus {
 	border-width: 0;
 }
 
+/* 2016 issue overrides */
+.section-2016.categorized-people .main-header span.category {
+	background: #981e32;
+}
+.section-2016.categorized-places .main-header span.category {
+	background: #8f7e35;
+}
+.section-2016.categorized-partners .main-header span.category {
+	background: #b67233;
+}
+.section-2016.categorized-promise .main-header span.category {
+	background: #4f868e;
+}
+.section-2016.categorized-people .dropcap,
+.section-2016.categorized-people .article-body blockquote {
+	color: #981e32;
+}
+.section-2016.categorized-places .dropcap,
+.section-2016.categorized-places .article-body blockquote {
+	color: #8f7e35;
+}
+.section-2016.categorized-partners .dropcap,
+.section-2016.categorized-partners .article-body blockquote {
+	color: #b67233;
+}
+.section-2016.categorized-promise .dropcap,
+.section-2016.categorized-promise .article-body blockquote {
+	color: #4f868e;
+}
+
 @media screen and (max-width:791px) {
 	.single-post .dropcap:before {
 		height: 0.82em;
@@ -539,6 +646,12 @@ input[type=submit].cahnrs-search-submit:focus {
 	img.alignright,
 	.article-body blockquote.pullquote {
 		margin-right: -1rem;
+	}
+	.story-wall .item {
+		padding-bottom: 66%;
+	}
+	.story-wall .item.tall {
+		padding-bottom: 88%;
 	}
 }
 
@@ -587,6 +700,23 @@ input[type=submit].cahnrs-search-submit:focus {
 	}
 	.reconnect-video-wrapper p {
 		padding: 5px 2rem;
+	}
+	.story-wall .portrait,
+	.story-wall .landscape {
+		float: none;
+		width: 100%;
+	}
+	.story-wall .item,
+	.story-wall .item.tall {
+		padding-bottom: 0;
+	}
+	.story-wall .item div {
+		left: 0;
+		position: relative;
+		right: 0;
+	}
+	.story-wall .flipped img {
+		position: static;
 	}
 }
 
