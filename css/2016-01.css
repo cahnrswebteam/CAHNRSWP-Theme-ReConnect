@@ -4,7 +4,7 @@
 
 /* Home nav */
 .reconnect-header-nav a {
-	background: rgba(70,78,84,0.5);
+	background: rgba(42,48,51,0.5);
 	color: #9da3a9;
 }
 
@@ -33,10 +33,10 @@
 /* Cover story */
 .cover-feature {
 	background-image: url(../images/2016-cover-bg.jpg) !important;
+	background-repeat: repeat;
 }
 .cover-feature .teaser {
-	background: url(../images/2016-cover-washington.png) center top no-repeat;
-	background-size: 87%;
+	background: url(../images/2016-cover-washington.jpg) center top no-repeat;
 	height: 590px;
 }
 .cover-feature header {
@@ -201,10 +201,5 @@
 	.cover-feature .teaser .more-button {
 		left: 3rem;
 		right: auto;
-	}
-}
-@media only screen and (max-width: 550px) {
-	.cover-feature .teaser {
-		background: none;
 	}
 }
